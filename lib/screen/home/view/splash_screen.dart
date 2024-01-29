@@ -22,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
         body: Center(
           child: Image.asset(
             "assets/images/splash.png",
-            height: 150,
+            height: 200,
           ),
         ),
       ),

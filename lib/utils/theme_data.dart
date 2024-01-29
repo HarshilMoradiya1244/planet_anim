@@ -22,7 +22,7 @@ ThemeData darkTheme = ThemeData(
         centerTitle: true,
         titleTextStyle: TextStyle(
           fontSize: 25,
-          color: Colors.black,
+          color: Colors.white,
         )),
     textTheme: const TextTheme(
       titleLarge: TextStyle(fontSize: 25, color: Colors.black),

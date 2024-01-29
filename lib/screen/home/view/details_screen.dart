@@ -54,16 +54,20 @@ class _DetailScreenState extends State<DetailScreen> with TickerProviderStateMix
                   borderRadius: BorderRadius.circular(5),
                   color: Colors.grey.shade100,
                 ),
-                child: AnimatedBuilder(
-                  animation: animationController!,
-                  builder: (context, child) {
-                    return Transform.rotate(angle: animationController!.value);
-                  },
-                    child :Image.asset(
-                      "${l1.land}",
-                      fit: BoxFit.cover,
-                    ),
-                ),
+          child :Image.asset(
+                   "${l1.land}",
+                  fit: BoxFit.cover,
+                 ),
+                // child: AnimatedBuilder(
+                //   animation: animationController!,
+                //   builder: (context, child) {
+                //     return Transform.rotate(angle: animationController!.value);
+                //   },
+                //     child :Image.asset(
+                //       "${l1.land}",
+                //       fit: BoxFit.cover,
+                //     ),
+                // ),
               ),
               const SizedBox(
                 height: 15,

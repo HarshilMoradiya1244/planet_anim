@@ -41,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          leading: IconButton(onPressed: (){},icon: Icon(Icons.menu),),
           title: const Text("Planets"),
           actions: [
             Consumer<ThemeProvider>(

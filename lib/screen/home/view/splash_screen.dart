@@ -33,32 +33,27 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
               height: MediaQuery.sizeOf(context).height,
               width: MediaQuery.sizeOf(context).width,
               child:
-              Image.asset("assets/images/homepage.jpg",fit: BoxFit.cover,),
+              Image.asset("assets/images/splashpage.jpg",fit: BoxFit.cover,),
             ),
             Center(
-              child: AnimatedBuilder(
-                  animation: animationController!,
-                  builder: (context, child) {
-                    return Transform.rotate(angle: animationController!.value);
-                  },
-                    child :Image.asset(
-                      "assets/images/splash.png",
-                      fit: BoxFit.cover,
-                    ),
-                ),
-              // child: Image.asset(
-              //   "assets/images/splash.png",
-              //   height: 100,
-              // ),
+              // child: AnimatedBuilder(
+              //     animation: animationController!,
+              //     builder: (context, child) {
+              //       return Transform.rotate(angle: animationController!.value);
+              //     },
+              //       child :Image.asset(
+              //         "assets/images/splashlogo.png",
+              //         fit: BoxFit.cover,
+              //       ),
+              //   ),
+              child: Image.asset(
+                "assets/images/splashlogo.png",
+                height: 100,
+              ),
             ),
           ],
         ),
       ),
     );
-
   }
-}
-void dispose(){
- dispose();
-
 }

@@ -55,5 +55,10 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
         ),
       ),
     );
+
   }
+}
+void dispose(){
+ dispose();
+
 }

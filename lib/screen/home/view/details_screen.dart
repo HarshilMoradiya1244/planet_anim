@@ -44,104 +44,114 @@ class _DetailScreenState extends State<DetailScreen> with TickerProviderStateMix
                 onPressed: () {}, icon: const Icon(Icons.favorite_border))
           ],
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            children: [
-              Container(
-                height: MediaQuery.sizeOf(context).height * 0.3,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Colors.grey.shade100,
-                ),
-          child :Image.asset(
-                   "${l1.land}",
-                  fit: BoxFit.cover,
-                 ),
-                // child: AnimatedBuilder(
-                //   animation: animationController!,
-                //   builder: (context, child) {
-                //     return Transform.rotate(angle: animationController!.value);
-                //   },
-                //     child :Image.asset(
-                //       "${l1.land}",
-                //       fit: BoxFit.cover,
-                //     ),
-                // ),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              Text(
-                "${l1.name}",
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              Text("${l1.description}"),
-              const SizedBox(
-                height: 15,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        body: Stack(
+          children: [
+            Container(
+              height: MediaQuery.sizeOf(context).height,
+              width: MediaQuery.sizeOf(context).width,
+              child:
+              Image.asset("assets/images/detailpage.jpg",fit: BoxFit.cover,),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
                 children: [
-                  Column(
+                  Container(
+                    height: MediaQuery.sizeOf(context).height * 0.3,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.grey.shade100,
+                    ),
+              child :Image.asset(
+                       "${l1.land}",
+                      fit: BoxFit.cover,
+                     ),
+                    // child: AnimatedBuilder(
+                    //   animation: animationController!,
+                    //   builder: (context, child) {
+                    //     return Transform.rotate(angle: animationController!.value);
+                    //   },
+                    //     child :Image.asset(
+                    //       "${l1.land}",
+                    //       fit: BoxFit.cover,
+                    //     ),
+                    // ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Text(
+                    "${l1.name}",
+                    style:
+                        const TextStyle(fontWeight: FontWeight.bold, fontSize: 20,color: Colors.white),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Text("${l1.description}",style: TextStyle(color: Colors.white),),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text(
-                        "Temperature : ${l1.temperature}",
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 15),
+                      Column(
+                        children: [
+                          Text(
+                            "Temperature : ${l1.temperature}",
+                            style: const TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 15,color: Colors.white),
+                          ),
+                          Text(
+                            "Mass : ${l1.mass}",
+                            style: const TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 15,color: Colors.white),
+                          ),
+                        ],
                       ),
-                      Text(
-                        "Mass : ${l1.mass}",
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 15),
-                      ),
+                      Column(
+                        children: [
+                          Text(
+                            "Radius : ${l1.radius}",
+                            style: const TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 15,color: Colors.white),
+                          ),
+                          Text(
+                            "Period : ${l1.period}",
+                            style: const TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 15,color: Colors.white),
+                          ),
+                        ],
+                      )
                     ],
                   ),
-                  Column(
-                    children: [
-                      Text(
-                        "Radius : ${l1.radius}",
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 15),
-                      ),
-                      Text(
-                        "Period : ${l1.period}",
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 15),
-                      ),
-                    ],
-                  )
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    "Distance Light Year : ${l1.distance_light_year}",
+                    style:
+                        const TextStyle(fontWeight: FontWeight.bold, fontSize: 15,color: Colors.white),
+                  ),
+                  Text(
+                    "Semi Major Axis : ${l1.semi_major_axis}",
+                    style:
+                        const TextStyle(fontWeight: FontWeight.bold, fontSize: 15,color: Colors.white),
+                  ),
+                  Text(
+                    "Host Star Temperature : ${l1.host_star_temperature}",
+                    style:
+                        const TextStyle(fontWeight: FontWeight.bold, fontSize: 15,color: Colors.white),
+                  ),
+                  Text(
+                    "Host Star Mass : ${l1.host_star_mass}",
+                    style:
+                        const TextStyle(fontWeight: FontWeight.bold, fontSize: 15,color: Colors.white),
+                  ),
                 ],
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              Text(
-                "Distance Light Year : ${l1.distance_light_year}",
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-              ),
-              Text(
-                "Semi Major Axis : ${l1.semi_major_axis}",
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-              ),
-              Text(
-                "Host Star Temperature : ${l1.host_star_temperature}",
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-              ),
-              Text(
-                "Host Star Mass : ${l1.host_star_mass}",
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

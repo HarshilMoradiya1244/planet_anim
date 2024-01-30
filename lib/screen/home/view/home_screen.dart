@@ -55,40 +55,55 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ),
           ],
         ),
-        body: ListView.builder(
-          itemCount: providerw!.planets.length,
-          itemBuilder: (context, index) {
-            PlanetModel dataList = providerw!.planets[index];
-            return Container(
-              height: 110,
-              width: double.infinity,
-              margin: const EdgeInsets.all(6),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Transform.rotate(
-                      angle: animationController!.value * 2 * pi,
-                      child: Image.asset("${providerw!.planets[index].img}")),
-                  Text(
-                    "${providerw!.planets[index].name}",
-                    style: const TextStyle(
-                        fontSize: 20, fontWeight: FontWeight.bold),
+        body: Stack(
+          children: [
+            Container(
+              height: MediaQuery.sizeOf(context).height,
+              width: MediaQuery.sizeOf(context).width,
+              child:
+              Image.asset("assets/images/homepage.jpg"),
+            ),
+            ListView.builder(
+              itemCount: providerw!.planets.length,
+              itemBuilder: (context, index) {
+                PlanetModel dataList = providerw!.planets[index];
+                return InkWell(
+                  onTap: (){
+                    Navigator.pushNamed(context, 'detail',
+                        arguments: dataList);
+                  },
+                  child: Container(
+                    height: 110,
+                    width: double.infinity,
+                    margin: const EdgeInsets.all(6),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Transform.rotate(
+                            angle: animationController!.value * 2 * pi,
+                            child: Image.asset("${providerw!.planets[index].img}")),
+                        Text(
+                          "${providerw!.planets[index].name}",
+                          style: const TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold,color: Colors.white),
+                        ),
+                        IconButton(
+                            onPressed: () {
+
+                            },
+                            icon: const Icon(Icons.arrow_forward_ios,color: Colors.white,))
+                      ],
+                    ),
                   ),
-                  IconButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'detail',
-                            arguments: dataList);
-                      },
-                      icon: const Icon(Icons.arrow_forward_ios))
-                ],
-              ),
-            );
-          },
+                );
+              },
+            ),
+          ],
         ),
       ),
     );

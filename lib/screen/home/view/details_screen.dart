@@ -13,7 +13,7 @@ class DetailScreen extends StatefulWidget {
   State<DetailScreen> createState() => _DetailScreenState();
 }
 
-class _DetailScreenState extends State<DetailScreen> with TickerProviderStateMixin {
+class _DetailScreenState extends State<DetailScreen> with SingleTickerProviderStateMixin {
   PlanetProvider? providerr;
   PlanetProvider? providerw;
   AnimationController? animationController;
@@ -22,6 +22,7 @@ class _DetailScreenState extends State<DetailScreen> with TickerProviderStateMix
   void initState() {
     super.initState();
     context.read<PlanetProvider>().getData();
+    context.read<PlanetProvider>().getBookMark();
     animationController =
         AnimationController(vsync: this, duration: const Duration(seconds: 3),);
     animationController!.addListener(() {

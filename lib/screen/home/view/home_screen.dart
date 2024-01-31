@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          leading: IconButton(onPressed: (){},icon: Icon(Icons.menu),),
+
           title: const Text("Planets"),
           actions: [
             Consumer<ThemeProvider>(
@@ -61,17 +61,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             Container(
               height: MediaQuery.sizeOf(context).height,
               width: MediaQuery.sizeOf(context).width,
-              child:
-              Image.asset("assets/images/homepage.jpg"),
+              child: Image.asset("assets/images/homepage.jpg"),
             ),
             ListView.builder(
               itemCount: providerw!.planets.length,
               itemBuilder: (context, index) {
                 PlanetModel dataList = providerw!.planets[index];
                 return InkWell(
-                  onTap: (){
-                    Navigator.pushNamed(context, 'detail',
-                        arguments: dataList);
+                  onTap: () {
+                    Navigator.pushNamed(context, 'detail', arguments: dataList);
                   },
                   child: Container(
                     height: 110,
@@ -87,17 +85,21 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       children: [
                         Transform.rotate(
                             angle: animationController!.value * 2 * pi,
-                            child: Image.asset("${providerw!.planets[index].img}")),
+                            child: Image.asset(
+                                "${providerw!.planets[index].img}")),
                         Text(
                           "${providerw!.planets[index].name}",
                           style: const TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold,color: Colors.white),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
                         ),
                         IconButton(
-                            onPressed: () {
-
-                            },
-                            icon: const Icon(Icons.arrow_forward_ios,color: Colors.white,))
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.arrow_forward_ios,
+                              color: Colors.white,
+                            ))
                       ],
                     ),
                   ),
@@ -105,6 +107,14 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               },
             ),
           ],
+        ),
+        drawer: Drawer(
+          child: ListView.builder(
+            itemCount: providerw!.planetList!.length,
+            itemBuilder: (context, index) => ListTile(
+              title: Text("${providerr!.planetList![index]}"),
+            ),
+          ),
         ),
       ),
     );

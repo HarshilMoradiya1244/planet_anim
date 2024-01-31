@@ -41,7 +41,17 @@ class _DetailScreenState extends State<DetailScreen> with TickerProviderStateMix
           title: const Text("Planet Detail"),
           actions: [
             IconButton(
-                onPressed: () {}, icon: const Icon(Icons.favorite_border))
+              onPressed: () {
+                providerr!.getBookMark();
+                if (!providerr!.planetList!.contains(providerr!.planets[providerw!.infoIndex!].name!)) {
+                  providerr!.addBookMarks();
+                } else {
+                  providerr!.removeBookMarks();
+                }
+              },
+              icon: const Icon(
+                  Icons.favorite),
+            ),
           ],
         ),
         body: Stack(
@@ -88,7 +98,7 @@ class _DetailScreenState extends State<DetailScreen> with TickerProviderStateMix
                   const SizedBox(
                     height: 15,
                   ),
-                  Text("${l1.description}",style: TextStyle(color: Colors.white),),
+                  Text("${l1.description}",style: const TextStyle(color: Colors.white),),
                   const SizedBox(
                     height: 15,
                   ),

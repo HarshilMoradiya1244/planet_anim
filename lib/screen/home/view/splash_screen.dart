@@ -22,6 +22,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
       setState(() {});
     });
   }
+
   @override
   Widget build(BuildContext context) {
 
@@ -55,5 +56,10 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
         ),
       ),
     );
+  }
+  @override
+  void dispose(){
+    animationController!.dispose();
+    super.dispose();
   }
 }

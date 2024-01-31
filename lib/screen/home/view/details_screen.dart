@@ -43,12 +43,12 @@ class _DetailScreenState extends State<DetailScreen> with TickerProviderStateMix
             IconButton(
               onPressed: () {
                 providerr!.getBookMark();
-                if (!providerr!.planetList!.contains(providerr!.planets[providerw!.infoIndex!].name!)) {
-                  providerr!.addBookMarks();
-                } else {
-                  providerr!.removeBookMarks();
-                }
-              },
+                  if (!providerr!.planetList!.contains(providerr!.planets[providerw!.infoIndex!].name!)) {
+                    providerr!.addBookMarks();
+                  } else {
+                    providerr!.removeBookMarks();
+                  }
+                },
               icon: const Icon(
                   Icons.favorite),
             ),
@@ -76,16 +76,7 @@ class _DetailScreenState extends State<DetailScreen> with TickerProviderStateMix
                        "${l1.land}",
                       fit: BoxFit.cover,
                      ),
-                    // child: AnimatedBuilder(
-                    //   animation: animationController!,
-                    //   builder: (context, child) {
-                    //     return Transform.rotate(angle: animationController!.value);
-                    //   },
-                    //     child :Image.asset(
-                    //       "${l1.land}",
-                    //       fit: BoxFit.cover,
-                    //     ),
-                    // ),
+
                   ),
                   const SizedBox(
                     height: 15,

@@ -23,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     context.read<PlanetProvider>().getData();
+    context.read<PlanetProvider>().getBookMark();
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 7),

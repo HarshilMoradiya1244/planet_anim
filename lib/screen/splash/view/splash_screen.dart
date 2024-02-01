@@ -44,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
               //     },
               //       child :Image.asset(
               //         "assets/images/splashlogo.png",
-              //         fit: BoxFit.cover,
+              //       height:100,
               //       ),
               //   ),
               child: Image.asset(

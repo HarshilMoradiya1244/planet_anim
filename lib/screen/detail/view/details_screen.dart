@@ -1,9 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:planet_anim/screen/home/model/planet_model.dart';
 import 'package:provider/provider.dart';
-
 import '../../home/provider/planet_provider.dart';
 
 class DetailScreen extends StatefulWidget {

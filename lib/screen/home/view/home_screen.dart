@@ -67,9 +67,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             ListView.builder(
               itemCount: providerw!.planets.length,
               itemBuilder: (context, index) {
-                PlanetModel dataList = providerw!.planets[index];
                 return InkWell(
                   onTap: () {
+                    PlanetModel dataList = providerw!.planets[index];
+                    providerr!.changeIndex(index);
                     Navigator.pushNamed(context, 'detail', arguments: dataList);
                   },
                   child: Container(

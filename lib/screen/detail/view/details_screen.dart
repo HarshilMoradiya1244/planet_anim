@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:planet_anim/screen/home/model/planet_model.dart';
 import 'package:provider/provider.dart';
 
-import '../provider/planet_provider.dart';
+import '../../home/provider/planet_provider.dart';
 
 class DetailScreen extends StatefulWidget {
   const DetailScreen({super.key});
@@ -16,19 +16,7 @@ class DetailScreen extends StatefulWidget {
 class _DetailScreenState extends State<DetailScreen> with SingleTickerProviderStateMixin {
   PlanetProvider? providerr;
   PlanetProvider? providerw;
-  AnimationController? animationController;
 
-  @override
-  void initState() {
-    super.initState();
-    context.read<PlanetProvider>().getData();
-    context.read<PlanetProvider>().getBookMark();
-    animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 3),);
-    animationController!.addListener(() {
-      setState(() {});
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,8 +38,10 @@ class _DetailScreenState extends State<DetailScreen> with SingleTickerProviderSt
                     providerr!.removeBookMarks();
                   }
                 },
-              icon: const Icon(
-                  Icons.favorite),
+              icon: Icon(
+                  providerw!.planetList!.contains(providerr!.planets[providerw!.infoIndex!].name!)
+                      ? Icons.favorite
+                      : Icons.favorite_border),
             ),
           ],
         ),

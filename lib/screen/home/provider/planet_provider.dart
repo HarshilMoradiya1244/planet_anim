@@ -8,8 +8,12 @@ class PlanetProvider with ChangeNotifier{
   List<PlanetModel> planets =[];
   List<String>? planetList = [];
   int? infoIndex;
+  bool zoomIn = false;
 
-
+  void changeImage(bool zoom){
+    zoomIn = zoom;
+    notifyListeners();
+  }
   Future<void> getData()async{
     JsonHelper jsonHelper = JsonHelper();
     List<PlanetModel> l1= await jsonHelper.jsonToList();

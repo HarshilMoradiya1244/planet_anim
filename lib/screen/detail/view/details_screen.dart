@@ -20,11 +20,15 @@ class _DetailScreenState extends State<DetailScreen> with SingleTickerProviderSt
     providerr = context.read<PlanetProvider>();
     providerw = context.watch<PlanetProvider>();
     PlanetModel l1 = ModalRoute.of(context)!.settings.arguments as PlanetModel;
-    return SafeArea(
+    return
+      SafeArea(
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text("Planet Detail"),
+          title: AnimatedAlign(
+            alignment: providerw!.zoomIn?Alignment.topRight:Alignment.topLeft,
+              duration: Duration(seconds: 3),
+              child: const Text("Planet Detail")),
           actions: [
             IconButton(
               onPressed: () {

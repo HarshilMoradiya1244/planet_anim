@@ -37,16 +37,6 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
               Image.asset("assets/images/splashpage.jpg",fit: BoxFit.cover,),
             ),
             Center(
-              // child: AnimatedBuilder(
-              //     animation: animationController!,
-              //     builder: (context, child) {
-              //       return Transform.rotate(angle: animationController!.value);
-              //     },
-              //       child :Image.asset(
-              //         "assets/images/splashlogo.png",
-              //       height:100,
-              //       ),
-              //   ),
               child: Image.asset(
                 "assets/images/splashlogo.png",
                 height: 100,
